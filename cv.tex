@@ -1,9 +1,31 @@
 \documentclass{tccv}
-
-\usepackage[french]{babel}
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb,english]{babel}
 \usepackage{graphicx}
+\usepackage{ulem}
+
+
+\renewcommand\personal[5][]{% 4 à l'origine
+    \needspace{0.5\textheight}%
+    \newdimen\boxwidth%
+    \boxwidth=\dimexpr\linewidth-2\fboxsep\relax%
+    \newlength\tailleImage% hauteur de l'image
+    \settoheight\tailleImage{\includegraphics[width=0.25\boxwidth]{#5}}% 25%, valeur modifiable
+    \newlength\ex% hauteur de la lettre "a"
+    \settoheight\ex{a}%
+    \newlength\declg% décalage
+    \setlength\declg{0.5\tailleImage}%
+    \addtolength\declg{-0.5\ex}%
+    \colorbox[HTML]{F5DD9D}{%
+    \begin{tabularx}{0.75\boxwidth}{c|X}% 75%, valeur modifiable
+    \Writinghand & {#2} \smallskip\\
+    \Telefon     & {#3} \smallskip\\
+    \Letter      & \href{mailto:#4}{#4}
+    \ifstrempty{#1}{}{\smallskip\\ \Lightning & \href{http://#1}{#1}}
+    \end{tabularx}%
+    \raisebox{-\declg}{\includegraphics[width=0.25\boxwidth]{#5}}% 25%, valeur modifiable
+    }}
 
 \begin{document}
 
@@ -13,30 +35,30 @@
 
 \begin{eventlist}
 
-\item{Octobre 2014 -- Présent}
+\item{Septembre 2014 -- Présent}
      {Aldebaran Robotics, Paris}
      {Product Owner}
 
-Design de l'interaction homme-robot (vocale et gestuelle)
-au sein d'une équipe de développement agile de 8 personnnes.
+Design de l'interaction homme-robot (vocale et gestuelle) 
+encadrement d'une équipe de développement agile de 8 personnnes.
 
 Définition itérative des spécifications avec nos clients,
-participation à l'implémentation
+participation à l'implémentation 
 et suivi du projet jusqu'à la livraison.
 
-\item{Septembre 2012 -- Octobre 2014}
+\item{Septembre 2012 -- Septembre 2014}
      {Aldebaran Robotics, Paris}
      {Développeur interaction}
 
-Développement informatique (C++/python),
-sur un algorithme de contact visuel
-pour les robot Pepper et Nao,
-qui a donné lieu à un brevet.
+Développement (C++/python)
+d'un algorithme de contact visuel 
+pour les robots Pepper et Nao, 
+qui a donné lieu à un brevet (EP2933064).
 
-Assemblage des briques logicielles de perception
-(tracking visuel, détection de son, mouvement, toucher)
-et de mouvement du robot
-pour détecter des personnes et les suivre du regard.
+Assemblage de briques logicielles de perception
+(tracking visuel, détection de son, mouvement, toucher) 
+et de mouvements du robot
+pour détecter l'utilisateur et le suivre du regard.
 
 Collaboration avec l'équipe "Expérience Utilisateur".
 
@@ -44,16 +66,9 @@ Collaboration avec l'équipe "Expérience Utilisateur".
      {IRCAM, Paris}
      {Stage de Recherche}
 
-Etude d'un système non linéaire de production vocale piloté par un
+Étude d'un système non linéaire de production vocale piloté par un
 modèle d’aire glottique pour la synthèse de la parole.
 
-
-\item{Septembre 2011 -- Mars 2012}
-    {"Le Laboratoire", Paris}
-    {Projet d'innovation}
-
-Projet avec des étudiants en design;
-réflexion autour du packaging de l'eau (a conduit à un dépôt de brevet pour un bouchon innovant).
 
 \item{Août 2010}
      {Xiang Sheng Packing, Shenzhen, Chine}
@@ -61,13 +76,35 @@ réflexion autour du packaging de l'eau (a conduit à un dépôt de brevet pour 
 
 Un mois de travail dans une usine de conditionnement.
 
+
+\section{Projets}
+
+\begin{eventlist}
+
+\item{juin 2015}
+     {Projet Personnel}
+     {Site internet}
+
+\textnormal{\url{www.steleforest.com}}, site réalisé avec Django, affichage bilingue de textes de la littérature chinoise. 
+
+
+\item{Septembre 2011 -- Mars 2012}
+    {"Le Laboratoire", Paris}
+    {Projet d'innovation}
+    
+Projet avec des étudiants en design :
+réflexion autour du packaging de l'eau, a conduit à un dépôt de brevet pour un bouchon innovant.
+
+
 \end{eventlist}
 
 \personal
-    {197 avenue Pierre Brossolette
+    {197 avenue Pierre Brossolette 
      \newline 92120 Montrouge}
     {06 23 30 93 79}
     {mathias.leborgne@gmail.com}
+    {selfie} % nom du fichier de la photo (son extension est facultative)
+
 
 \section{Formation}
 
@@ -79,7 +116,7 @@ Un mois de travail dans une usine de conditionnement.
 
 \item[Master ATIAM]{2011--2012}
     {IRCAM-UPMC, Paris}
-    {Acoustique, traitement du signal,
+    {Acoustique, traitement du signal, 
      informatique appliqués à la musique}
 
 \item[Classes Préparatoires]{2006--2009}
@@ -93,13 +130,13 @@ Un mois de travail dans une usine de conditionnement.
 \begin{factlist}
 
 \item{Langages}
-     {C++, python, Matlab}
+     {C++, Python, Matlab}
 
 \item{Outils}
-     {git, redmine, Boost, Qt, SublimeText, \LaTeX, Max/MSP}
+     {Git, Django, Boost, QtCreator, SublimeText, \LaTeX, Max/MSP}
 
 \item{Autres}
-     {développement agile \\
+     {Développement agile \\
       (méthode SCRUM), \\
       Interaction homme-robot,
       Programmation concurrente,
@@ -131,10 +168,10 @@ Un mois de travail dans une usine de conditionnement.
 \begin{factlist}
 
 \item{Musique}
-     {Guitare, improvisation}
+     {Guitare classique}
 
-\item{Dessin}
-     {Croquis, aquarelle}
+\item{Art}
+     {Dessin d'art, intérêt pour la peinture}
 
 \end{factlist}
 
