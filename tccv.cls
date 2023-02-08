@@ -21,6 +21,7 @@
 %   macros, so the document is much easier to read (and customize);
 % * it is plain LaTeX/Koma-script, so the CV can be compiled
 %   with the usual tools, latex and pdflatex included.
+\usepackage[utf8]{inputenc}
 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{tccv}
@@ -46,14 +47,14 @@
     % Fails gracefully if not in LuaLaTeX
     \providecommand\directlua[1]{#2}%
     \directlua{%
-    local minlen=tonumber("#1")
-    local src="\luaescapestring{\unexpanded{#2}}"
-    local dst={}
-    for w in src:gmatch('[^\string\%s]+') do
-        if w:len() >= minlen then w = w:sub(1,1):upper()..w:sub(2) end
-        table.insert(dst, w)
-    end
-    tex.print(dst)}}
+	local minlen=tonumber("#1")
+	local src="\luaescapestring{\unexpanded{#2}}"
+	local dst={}
+	for w in src:gmatch('[^\string\%s]+') do
+	    if w:len() >= minlen then w = w:sub(1,1):upper()..w:sub(2) end
+	    table.insert(dst, w)
+	end
+	tex.print(dst)}}
 
 \pagestyle{empty}
 \setlength\parindent{0pt}
@@ -70,10 +71,10 @@
 \renewcommand\part[1]{%
     \twocolumn[%
     \begin{center}
-    \vskip-\lastskip%
-    {\usekomafont{part} #1} \medskip\\
-    {\fontfamily{pzc}\selectfont\Huge Curriculum vitae}
-    \bigskip
+	\vskip-\lastskip%
+	{\usekomafont{part} #1} \medskip\\
+	{\Large \textit{System \& Software Engineer - Telecom ParisTech}}
+	\bigskip
     \end{center}]}
 
 % Overrides the \section command to capitalize every
@@ -128,12 +129,12 @@
 \newenvironment{eventlist}{%
     \newcommand*\inskip{}
     \renewcommand\item[3]{%
-    \inskip%
-    {\raggedleft\sc ##1\\[1pt]}
-    {##2}\\[2pt]
-    {\Large\it ##3}
-    \medskip
-    \renewcommand\inskip{\bigskip}}}
+	\inskip%
+	{\raggedleft\sc ##1\\[1pt]}
+	{##2}\\[2pt]
+	{\Large\it ##3}
+	\medskip
+	\renewcommand\inskip{\bigskip}}}
     {\bigskip}
 
 % Use only \item inside this environment: no other macros
@@ -144,9 +145,9 @@
 % ]|
 \newenvironment{yearlist}{%
     \renewcommand\item[4][]{%
-    {\sc ##2} & {\bfseries ##3} \\
-    \ifstrempty{##1}{}{& {\sc ##1} \\}
-    & {\it ##4}\medskip\\}
+	{\sc ##2} & {\bfseries ##3} \\
+	\ifstrempty{##1}{}{& {\sc ##1} \\}
+	& {\it ##4}\medskip\\}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
 
@@ -161,7 +162,7 @@
     \newdimen\unbaseline
     \unbaseline=\dimexpr-\baselinestretch\baselineskip\relax
     \renewcommand\item[2]{%
-    \textsc{##1} & {\raggedright ##2\medskip\\}\\[\unbaseline]}
+	\textsc{##1} & {\raggedright ##2\medskip\\}\\[\unbaseline]}
     \tabularx{\linewidth}{rX}}
     {\endtabularx}
 %%
